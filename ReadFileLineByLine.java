@@ -10,6 +10,7 @@ import java.util.Comparator;
 
 public class ReadFileLineByLine {
 
+
     public static void main(String[] args) {
         try {
             File file = new File("testTaskFile.txt");
@@ -25,7 +26,9 @@ public class ReadFileLineByLine {
             System.out.println("/////////////////////////////////////////////////////////");
 //            Collections.sort(lines, Collections.reverseOrder());
             lines.sort(Comparator.comparingInt(String::length));
+            Collections.reverse(lines);
             for (int i = 0; i < lines.size(); i++) {
+                System.out.println(lines.get(i));
             }
             } catch (FileNotFoundException ex) {
             ex.printStackTrace();
